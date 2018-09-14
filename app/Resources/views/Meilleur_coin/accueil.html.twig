@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}Le Meilleur coin{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-</head>
-<body>
-<nav>
-    {% include 'menu.html.twig' %}
+{% extends 'base.html.twig' %}
 
-</nav>
 
-{% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
-</body>
-</html>
+
+
+{% block body %}
+
+<main class="container">
+    <div align="center">
+        <p><h1>Bienvenue sur <strong>Le Meilleur coin !</strong></h1></p>
+    </div>
+
+
+</main>
+
+{% endblock %}
+
+

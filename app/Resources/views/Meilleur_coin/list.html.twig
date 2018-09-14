@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <main class="container">
+    <table>
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>City</th>
+            <th>Zip</th>
+            <th>Price</th>
+            <th>Date</th>
+        </tr>
+        {% for ad in ads %} {#On crée une boucle pour afficher tout les résutalts de nos formulaires #}
+            <tr>
+                <td><a href="{{ path('annonce_detail', {'id': ad.id}) }}">{{ ad.title }}</a></td>
+                <td>{{ ad.description }}</td>
+                <td>{{ ad.city }}</td>
+                <td>{{ ad.zip }}</td>
+                <td>{{ ad.price }}</td>
+                <td>{{ ad.dateCreated | date("d/m/Y H:i:s") }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    </main>
+{% endblock %}

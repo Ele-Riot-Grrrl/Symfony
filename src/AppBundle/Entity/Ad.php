@@ -63,6 +63,24 @@ class Ad
      */
     private $dateCreated;
 
+    // ...
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Category")
+     */
+    private $category;
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
 
     /**
      * Get id
@@ -217,5 +235,9 @@ class Ad
     {
         return $this->dateCreated;
     }
+
+
+
 }
 
+?>

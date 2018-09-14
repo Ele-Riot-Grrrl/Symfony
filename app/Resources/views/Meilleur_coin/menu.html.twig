@@ -1,5 +1,32 @@
-<ul>
-    <li>Page 1</li>
-    <li>Page 2</li>
-    <li>Page 3</li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('annonce_accueil') }}">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('annonce_list') }}">Nouveautés</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=" {{ path('category_list') }}">Catégories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('annonce_new') }}">Ajouter une annonce</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+{#
+  <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="list_category" role="button" aria-haspopup="true" aria-expanded="false">Catégories</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="vetements">Vêtements</a>
+                    <a class="dropdown-item" href="objets">Objets</a>
+                </div>
+            </li>
+#}

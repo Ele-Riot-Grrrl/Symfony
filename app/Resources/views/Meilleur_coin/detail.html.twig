@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="row mb-3"><h1>Détails de l'annonce n°{{ ad.id }}</h1></div>
+<div class="row">
+    <div class="col-6">
+        <img class="card-img mb-4" src="{{ asset('images/annonce.jpg') }}" alt="Card image cap">
+        <span class="offset-1">
+            <a href="#"><img src="{{ asset('images/favoris.png') }}" width="35px"> Ajouter aux favoris</a>
+            </span>
+    </div>
+    <div class="col-6">
+        <div class="card" style="width: 31rem; margin:auto;">
+            <div class="card-body">
+                <h3 class="card-title">{{ ad.title }}</h3>
+                {% if ad.category %}
+                    <p class="card-text"><h5 class="text-primary">{{ ad.category.name }}</h5></p>
+                {% endif %}
+                <p class="card-text"><h5>{{ ad.price }} €</h5></p>
+            </div>
+            <ul class="list-group list-group-flush">
+            </ul>
+            <li class="list-group-item bg-dark text-white">Description</li>
+            <li class="list-group-item">{{ ad.description }}</li>
+            <li class="list-group-item bg-dark text-white">Localisation</li>
+            <li class="list-group-item">{{ ad.city }} - {{ ad.zip }}</li>
+            <li class="list-group-item bg-dark text-white">Publiée le</li>
+            <li class="list-group-item">{{ ad.dateCreated|date }}</li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

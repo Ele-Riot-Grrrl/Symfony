@@ -10,4 +10,29 @@ namespace AppBundle\Repository;
  */
 class AdRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAdsWithPriceLowerThan10()
+    {
+        // Si vous voulez créer votre QueryBuilder
+        //$this->createQueryBuider()
+        //
+        //Pour le DQL, vous allez devoir récupérer l'entityManager
+
+        // Maintenant on va faire la même chose mais avec du DQL
+        $dql = <<<DQL
+SELECT a
+FROM AppBundle:Ad a
+WHERE a.price <= :price OR a.title LIKE :title
+DQL;
+
+        // C'est une autre façon de récupérer mes villes. Plus simple si vous avez des OR comme on peut le voir dans cet exemple
+        return $this
+            ->getEntityManager()
+            ->createQuery($dql)
+            ->setParameter('price', 10)
+            ->setParameter('title', '%tt%')
+            ->getResult()
+            ;
+    }
+
+
 }
